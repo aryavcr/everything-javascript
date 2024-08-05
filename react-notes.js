@@ -62,3 +62,6 @@ people = [{
 var people2 = people.filter(value => value.age>20)
 console.log(people2)
 //this only keeps people[0] from the array
+
+
+//useState & others
