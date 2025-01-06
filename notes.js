@@ -1,3 +1,32 @@
+//main.bundle.js bundles all scripts together in exact same order
+//variables(declaration -> initialization)
+var a; //undefined
+console.log(a);
+a = {}; //initialization 
+console.log(a);
+//variables(declaration + initialization)
+var b = [1,2];   
+console.log(b);
+// we use let over var due to hoisting & block space issues
+
+
+
+
+//const and immutability
+const c = {
+    name: 'aryav',
+    age: '21',
+    sports: 'basketball'
+}
+console.log(c.sports);
+//we cant redeclare or reassign c as it is a const but we can talk to the object
+c.sports = 'cricket';
+console.log(c.sports);
+//thus const is not actually immutable
+
+
+
+
 //data types = primitive & reference
 var arr = [1,2.3,4];
 var b = arr;
@@ -10,9 +39,17 @@ c.pop();
 //this pops only from c not arr
 
 
+//conditional logic
+//boolean
+// ! = not !! = not not / reverse
+//a string with no length is actually false
+console.log(!!'');
+console.log(!!'hi');
+console.log(!!0);
+//any number other than 0 is true, thus we can use it for checking
 
 
-//conditionals
+
 //loops, for & while
 for(start; end; change){
 
