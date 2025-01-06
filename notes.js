@@ -49,6 +49,82 @@ console.log(!!0);
 //any number other than 0 is true, thus we can use it for checking
 
 
+//equals
+console.log(1 == '1'); //true
+console.log(1 === '1'); //false
+
+//if, else, elseif
+ //syntax 1
+let condition = true;
+let result;
+if (condition) {
+    result = 5;
+}
+else if (condition === !!'') {
+    result = hi;
+}
+else {
+    result = bye;
+}
+console.log(result);
+ //syntax 2
+ let abc = 5;
+ let pqr = 2;
+ let ans = abc + pqr
+ let answer = 'The answer is ' + (
+    ans === 5 ? 'five' 
+    : ans === 12 ? 'twelve' 
+    : 'nothing');
+ console.log(answer);
+
+ //switch
+ let result2;
+  switch (ans) {
+    case 5:
+        result2 = 'five';
+    break;
+    case 12:
+        result2 = 'twelve';
+    break;
+    default:
+        result2 = 'idk'
+  }
+  console.log(result2);
+
+
+//numbers
+  //Number function
+  console.log(Boolean(Number('24.86') === 24.860000))
+  console.log(Boolean(+('24.86') === 24.860000))
+  console.log(25 + +(25e5))
+
+  //we are actually doing a type-conversion from string to number using Number function in a non constructor syntax
+  
+  //literal numbers
+  const numberis = 10;
+
+  //parse function
+  console.log(parseInt('20px', 10));// radix defines base
+  console.log(parseInt('0101', 2));
+  console.log(parseFloat('25.99px')); //no radix parameter
+   
+  //Nan -> not a number
+  console.log(Number.NaN);
+  //NaN is globally available as Number.Nan
+  console.log(isNaN('hi'));
+  console.log(Number.isNaN('hi'));
+  //Number.isNan checks for NaN exactly whereas isNaN checks only if it is not a number.
+
+//basic typechecking
+  console.log(typeof 425.55);
+  console.log(typeof Number(55.55));
+  console.log(Number(99.582) instanceof Number)
+  console.log(new Number(44.83e10) instanceof Number);
+  //dont use new mostly
+
+
+
+
 
 //loops, for & while
 for(start; end; change){
