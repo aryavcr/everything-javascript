@@ -123,6 +123,41 @@ console.log(result);
   //dont use new mostly
 
 
+//strings
+//using backticks is the best way instead of quotes
+console.log(`The number is : ${numberis}`);
+//backticks allow for multi line strings
+console.log(`Hi
+    my
+    name
+    is
+    Aryav`);
+//strings > numbers
+console.log(55 + "11");
+//or
+console.log(String(55 + "11"));
+console.log(String({ age: 21 }));
+console.log(String([1, 2, 3, 4, 5]));
+//index in a string
+const z = "aryav";
+console.log(z.length, z[2], z[z.length - 1]);
+//they are immutable in the sense that they work with values, not reference. They get copied by value.
+
+//typechecking strings
+console.log(typeof "aryav");
+console.log(String("aryav") instanceof String);
+console.log(new String("aryav") instanceof String);
+
+//methods on strings
+console.log("aryav".charAt(0));
+console.log("aryav".endsWith("a"));
+console.log("aryav".includes("p"));
+console.log("aryav".replace("yav", "jun"));
+//slice -> cut from x to y
+console.log("aryav".slice(2, 4));
+//split -> splits into items of an array
+console.log("aryav".split("y"));
+console.log("aryav".split("y")[0]);
 
 
 
@@ -228,6 +263,64 @@ abcd();
 //all functions return something, they must. if there is nothing to return they return 
 //undefined(read more)
 
+//functions & hoisting
+aryav(); //only declarations can be accessed before declaration
+//aryav1(); //cant
+//aryav3(); //cant
+//fn declaration
+function aryav() {
+  return 123;
+}
+//fn expression
+const aryav1 = function () {
+  return 456;
+};
+//arrow function
+const aryav3 = () => 789;
+
+
+//parameters & arguments
+function arjun(marks) {
+    return (`Total marks are: ${marks}`)
+};
+console.log((arjun(5)));
+//when parameter exists but no argument is supplied
+
+
+
+//multiple parameters
+const marks1 = (...params) => {
+  return params.reduce((prev,next) => prev + next )
+}
+console.log(marks1(22,33,44,55,66,77));
+
+//this, context, call, apply and bind
+const person1 = {
+   name : 'aryav',
+   age : 21,
+   gender : 'male'
+}
+const person2 = {
+  name : 'arjun',
+  age : 17,
+  gender : 'male'
+}
+
+function info() {
+  return(`Your name is ${this.name} and age is ${this.age}. Is this correct?`);
+}
+console.log(info.call(person1))
+//in the above example the context for `this` is person1 
+function info2(...params) {
+  return(`Your name is ${this.name} & age is ${this.age}. Your marks are ${params.reduce((prev,next) => prev + next)}`);
+}
+//call
+console.log(info2.call(person2, 22,44,35,97,23))
+//apply
+console.log(info2.apply(person2,[22,67,32,78]))
+//bind
+const info3 = info2.bind(person1);
+console.log(info3(22,44,55,66))
 
 
 
